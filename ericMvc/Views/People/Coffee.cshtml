@@ -1,0 +1,53 @@
+ @model IEnumerable<ericMvc.Models.Coffee>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Coffee</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <div class="btn btn-primary">
+                @Html.DisplayNameFor(model => model.Brand)
+            </div class="btn btn-primary">
+            <div class="btn btn-primary">
+                @Html.DisplayNameFor(model => model.Name)
+            </div class="btn btn-primary">
+            <div class="btn btn-primary">
+                @Html.DisplayNameFor(model => model.Origin)
+            </div class="btn btn-primary">
+           
+            
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+   if(item != null){
+        <tr>
+         
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Origin)
+            </td>
+          
+             
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+   }
+}
+    </tbody>
+</table>

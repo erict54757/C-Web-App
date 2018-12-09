@@ -1,0 +1,38 @@
+@model IEnumerable<ericMvc.Models.PeopleModel>
+
+<h1 class="display-4">People Controller view</h1>
+
+<p>@Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+<tr>
+<th>
+    @Html.DisplayNameFor(model=> model.FirstName)
+</th>
+<th>
+    @Html.DisplayNameFor(model=> model.LastName)
+</th>
+<th>
+    @Html.DisplayNameFor(model=> model.Age)
+</th>
+</tr>
+
+@foreach(var item in Model){
+    <tr>
+        <td>
+            @Html.DisplayFor(ModelItem=> item.FirstName)
+        </td>
+    
+     <
+        <td>
+            @Html.DisplayFor(ModelItem=> item.LastName)
+        </td>
+    
+     
+        <td>
+            @Html.DisplayFor(ModelItem=> item.Age)
+        </td>
+    </tr>
+}
+</table>
